@@ -46,7 +46,8 @@ Check out this repo in your `$GOPATH`. Run `go build`. Run the binary.
 # Flags
 |Name     | Required | Description
 |---------|---|-----------------------------------------------------
-|`address`| N | TCP bind address. Defaults to ":8080"
+|`address`| N | TCP bind address. Defaults to ":8080".
+|`socket` | N | UNIX socket to bind to. Takes precedence over `address`.
 
 # TLS
 `oauth-proxy` does not do TLS (yet). Run it behind a reverse proxy like NGINX.
