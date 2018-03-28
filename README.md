@@ -17,8 +17,8 @@ this:
 
 ```json
 {
-    token: "CSRF TOKEN",
-    host: "deployment23.myapp.com"
+    "token": "CSRF TOKEN",
+    "host": "deployment23.myapp.com"
 }
 ```
 
