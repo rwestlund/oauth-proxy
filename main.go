@@ -5,13 +5,17 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"log"
 	"net/http"
 )
 
 func main() {
+	var address = flag.String("address", ":8080", "TCP address to bind to")
+	flag.Parse()
+
 	http.HandleFunc("/", redirectHandler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(*address, nil))
 }
 
 func redirectHandler(w http.ResponseWriter, r *http.Request) {

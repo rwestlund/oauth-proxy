@@ -43,6 +43,11 @@ You can call the token whatever you want, and include more fields if you like.
 # Building
 Check out this repo in your `$GOPATH`. Run `go build`. Run the binary.
 
+# Flags
+|Name     | Required | Description
+|---------|---|-----------------------------------------------------
+|`address`| N | TCP bind address. Defaults to ":8080"
+
 # TLS
 `oauth-proxy` does not do TLS (yet). Run it behind a reverse proxy like NGINX.
 
