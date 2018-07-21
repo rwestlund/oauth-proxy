@@ -18,6 +18,7 @@ func main() {
 	flag.Parse()
 
 	http.HandleFunc("/", redirectHandler)
+	http.HandleFunc("/ping", handlePing)
 	var err error
 
 	if *socket != "" {
@@ -43,6 +44,15 @@ func main() {
 		err = http.ListenAndServe(*address, nil)
 	}
 	log.Fatal("Exiting: ", err)
+}
+
+func handlePing(res http.ResponseWriter, req *http.Request) {
+	if req.Method == "GET" {
+		res.WriteHeader(http.StatusOK)
+		return
+	}
+	res.WriteHeader(http.StatusMethodNotAllowed)
+	return
 }
 
 func redirectHandler(w http.ResponseWriter, r *http.Request) {
